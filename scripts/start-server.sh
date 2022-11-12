@@ -13,8 +13,8 @@ else
   cp ${CONFIG_DIR}/postmirror.sh  ${MIRROR_DIR}/var/postmirror.sh
   chmod +x ${MIRROR_DIR}/var/postmirror.sh
 fi
-if [ "$(grep -E "# set base_path    /var/spool/apt-mirror" ${CONFIG_DIR}/mirror.list)" ]; then
-  sed -i "/# set base_path    \/var\/spool\/apt-mirror/c\set base_path    ${MIRROR_DIR}" ${CONFIG_DIR}/mirror.list
+if [ "$(grep -E "set base_path         /var/spool/apt-mirror" ${CONFIG_DIR}/mirror.list)" ]; then
+  sed -i "/set base_path         /var/spool/apt-mirror/c\set base_path         ${MIRROR_DIR}" ${CONFIG_DIR}/mirror.list
   chmod -R 777 ${CONFIG_DIR}/
   chown -R ${UID}:${GID} ${CONFIG_DIR}/
   echo "---Please edit your 'mirror.list' file in your conig directory and restart the container when done!---"
