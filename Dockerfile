@@ -1,7 +1,7 @@
 FROM ich777/debian-baseimage
 
 LABEL org.opencontainers.image.authors="admin@minenet.at"
-LABEL org.opencontainers.image.source="https://github.com/ich777/docker-debian-mirror"
+LABEL org.opencontainers.image.source="https://github.com/ich777/docker-ubuntu-mirror"
 
 RUN apt-get update && \
 	apt-get -y install apt-mirror xz-utils cron apache2 && \
