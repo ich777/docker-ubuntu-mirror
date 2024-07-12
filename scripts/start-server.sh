@@ -1,4 +1,15 @@
 #!/bin/bash
+echo "-----------------------------------------------------"
+echo "| This container is deprecated, please use:"
+echo "| https://github.com/flavienbwk/apt-mirror-docker"
+echo "| or a similar container instead."
+echo "|"
+echo "| The container start will continue in 60 seconds..."
+echo "-----------------------------------------------------"
+echo
+
+sleep 60
+
 if [ ! -f ${CONFIG_DIR}/postmirror.sh ]; then
   echo "${MIRROR_DIR}/var/clean.sh" > ${CONFIG_DIR}/postmirror.sh
   if [ ! -d ${MIRROR_DIR}/var ]; then
